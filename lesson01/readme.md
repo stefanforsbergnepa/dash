@@ -6,4 +6,4 @@ Open the solution in code (type ```code .``` in your console in the folder)
 
 Your goal is to make all tests pass.
 
-Run them running ```dotnet test```
+Run them with ```dotnet test```
