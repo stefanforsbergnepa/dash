@@ -1,7 +1,9 @@
 You should have dotnet sdk >= 3.1
 
-(check bersion by typing dotnet --version)
+(check version by typing ```dotnet --version```)
+
+Open the solution in code (type ```code .``` in your console in the folder)
 
 Your goal is to make all tests pass.
 
-Run them running dotnet test
+Run them running ```dotnet test```
