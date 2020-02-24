@@ -30,6 +30,11 @@ namespace lesson05
         {
             throw new NotImplementedException();
         }
+
+        public string[] CreateIdsForUnits(Unit[] population)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class Unit

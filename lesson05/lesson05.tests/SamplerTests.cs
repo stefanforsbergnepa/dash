@@ -131,5 +131,26 @@ namespace lesson05.tests
             sample.Count(x => x.TargetGroup == "TG1").ShouldBe(2);
             sample.Count(x => x.TargetGroup == "TG2").ShouldBe(2);
         }
+
+        [Fact]
+        public void Create_ids_for_units()
+        {
+            var population = new []
+            {
+                new Unit { Id = "unit1@email.com", TargetGroup = "TG1", VisitDate = DateTime.Parse("2020-02-25") },
+                new Unit { Id = "unit2@email.com", TargetGroup = "TG2", VisitDate = DateTime.Parse("2020-02-25") },
+                new Unit { Id = "unit3@email.com", TargetGroup = "TG1", VisitDate = DateTime.Parse("2020-02-25") },
+                new Unit { Id = "unit4@email.com", TargetGroup = "TG2", VisitDate = DateTime.Parse("2020-02-25") }
+            };
+
+            var sampler = new Sampler();
+            var sample = sampler.CreateIdsForUnits(population);
+
+            // Units ids should be composed by Id_TargetGroup_VisitDate
+            sample[0].ShouldBe("unit1@email.com_TG1_2020-02-25");
+            sample[1].ShouldBe("unit2@email.com_TG2_2020-02-25");
+            sample[2].ShouldBe("unit3@email.com_TG1_2020-02-25");
+            sample[3].ShouldBe("unit4@email.com_TG2_2020-02-25");
+        }
     }
 }
